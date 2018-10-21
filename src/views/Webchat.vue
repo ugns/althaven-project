@@ -18,7 +18,7 @@ export default {
       user: {},
     }
   },
-  async mounted() {
+  async created() {
     if (this.isAuthenticated) {
       const currentUser = await Auth.currentUserInfo()
       this.user = {
