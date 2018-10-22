@@ -1,21 +1,19 @@
 <template>
-  <b-embed
+  <TheLounge
     v-if="isAuthenticated"
-    type="iframe"
-    :src="src">
-  </b-embed>
+    :username="user.nickname">
+  </TheLounge>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import Auth from "@aws-amplify/auth"
-
-const baseUrl = 'https://webchat.alternativehaven.com/'
+import TheLounge from '@/components/chat/TheLounge.vue'
 
 export default {
   data() {
     return {
-      user: {},
+      user: "",
     }
   },
   async created() {
@@ -28,19 +26,13 @@ export default {
     }
   },
   computed: {
-    src: function() {
-      return this.isAuthenticated ? baseUrl+'?nick='+this.user.nickname : baseUrl
-    },
-    ...mapGetters("auth", ["isAuthenticated", "authenticatedUser"])
+    ...mapGetters("auth", ["isAuthenticated", "authenticatedUser"]),
+    ...mapState({
+        isAuthenticated: state => state.auth.isAuthenticated,
+    })
+  },
+  components: {
+    TheLounge
   }
 }
 </script>
-
-<style scoped>
-.embed-responsive {
-  height: 600px;
-}
-.embed-responsive-item {
-  height: 600px;
-}
-</style>
