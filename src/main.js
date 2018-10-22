@@ -27,9 +27,9 @@ Auth.configure(AuthConfig)
 
 Vue.use(BootstrapVue)
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.component('font-awesome-layers', FontAwesomeLayers)
-Vue.component('font-awesome-layers-text', FontAwesomeLayersText)
+Vue.component('fa-icon', FontAwesomeIcon)
+Vue.component('fa-layers', FontAwesomeLayers)
+Vue.component('fa-layers-text', FontAwesomeLayersText)
 
 Vue.config.productionTip = false
 
