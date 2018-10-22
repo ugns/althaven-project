@@ -2,14 +2,22 @@
   <footer class="bd-footer">
     <b-container>
       <b-row class="justify-content-md-center">
-        <div class="bd-footer-copyright">&copy; 2018 UnderGrid Network Services</div>
+        <div class="bd-footer-copyright">&copy;&nbsp;{{ copyright }} UnderGrid Network Services</div>
       </b-row>
     </b-container>
   </footer>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    copyright: function() {
+      const initialYear = '2018'
+      const currentYear = new Date().getFullYear()
+      return (currentYear > initialYear) ? initialYear + '-' + currentYear : currentYear
+    }
+  }
+}
 </script>
 
 <style>
