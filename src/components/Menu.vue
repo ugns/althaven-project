@@ -67,13 +67,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .navbar {
-  background-image: linear-gradient(to bottom, darkblue, royalblue);
+  background-image: linear-gradient(to bottom, darkblue, blue);
 }
 
-.navbar-nav .nav-link {
-  color: royalblue;
+.navbar-nav .nav-link.active{
+  font-weight: bold;
 }
 
 .nav-username {
