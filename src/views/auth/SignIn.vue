@@ -76,7 +76,7 @@ export default {
       })
 
       if (!this.hasAuthenticationStatus) {
-        router.push({ name: 'home' })
+        router.go(-1)
       }
     }
   }
