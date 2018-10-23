@@ -38,7 +38,7 @@
       <b-col cols="6">
         <p>
           <b-link :to="{ name: 'signUp' }">Create an account</b-link> or 
-          <b-link :to="{ name: 'passwordReset' }">reset password</b-link>
+          <b-link :to="{ name: 'passwordReset' }">Reset password</b-link>
         </p>
       </b-col>
     </b-row>

@@ -53,6 +53,14 @@
     </b-row>
     <b-row class="justify-content-md-center">
       <b-col cols="6">
+        <p>
+          <b-link :to="{ name: 'signIn' }">Sign into account</b-link> or 
+          <b-link :to="{ name: 'passwordReset' }">Reset password</b-link>
+        </p>
+      </b-col>
+    </b-row>
+    <b-row class="justify-content-md-center">
+      <b-col cols="6">
         <v-alert/>
       </b-col>
     </b-row>
