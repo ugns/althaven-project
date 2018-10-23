@@ -64,8 +64,9 @@ export default {
       try {
         const user = await Auth.signIn(params.username, params.password)
         commit('setUserAuthenticated', user)
-        const userInfo = await Auth.currentUserInfo()
-        commit('setUserInfo', { username: userInfo.username, ...userInfo.attributes })
+        const userAttributes = await Auth.userAttributes(user)
+        const attributes = Auth.attributesToObject(userAttributes)
+        commit('setUserInfo', { username: user.username, ...attributes })
       } catch (err) {
         commit('setAuthenticationError', err)
       }
