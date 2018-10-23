@@ -10,7 +10,7 @@ const routes = [{
     name: 'home',
     component: Home,
     meta: {
-      title: 'Alternative Haven',
+      title: process.env.VUE_APP_SITE_NAME,
       auth: false
     }
   },
@@ -98,7 +98,7 @@ const routes = [{
 
 const router = new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.VUE_APP_BASE_URL,
   routes
 })
 
