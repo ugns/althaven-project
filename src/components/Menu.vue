@@ -3,7 +3,7 @@
     toggleable="md"
     type="dark">
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-    <b-navbar-brand :to="{ name: 'home' }">AltHaven</b-navbar-brand>
+    <b-navbar-brand :to="{ name: 'home' }">{{ sitebranch }}</b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <b-nav-item :to="{ name: 'about' }">About</b-nav-item>
@@ -19,7 +19,7 @@
           v-if="isAuthenticated"
           right>
           <template slot="button-content">
-            <fa-icon :icon="['far','user-circle']"></fa-icon><strong class="nav-username">{{ user.nickname }}</strong>
+            <fa-icon :icon="['far','user-circle']"></fa-icon><span v-if="user" class="nav-username"><strong>{{ user.nickname }}</strong></span>
           </template>
           <b-row
             style="margin:5px">
@@ -34,42 +34,32 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
-import Auth from "@aws-amplify/auth"
+import { mapGetters, mapState, mapActions } from 'vuex';
 
 export default {
   name: 'Navbar',
-  data() {
+  data () {
     return {
-      user: "",
-    }
-  },
-  async created() {
-    if (this.isAuthenticated) {
-      const currentUser = await Auth.currentUserInfo()
-      this.user = {
-        username: currentUser.username,
-        ...currentUser.attributes
-      } 
+      sitebranch: process.env.VUE_APP_SITE_BRAND
     }
   },
   computed: {
-    ...mapGetters("auth", ["isAuthenticated"]),
-    ...mapState({
-        isAuthenticated: state => state.auth.isAuthenticated,
+    ...mapState('auth', {
+        user: state => state.userInfo
+    }),
+    ...mapGetters('auth', {
+      isAuthenticated: 'isAuthenticated',
     })
   },
   methods: {
-    signIn() {
-      this.$store.dispatch('signIn')
-    }
+    ...mapActions('auth', ['signin'])
   }
 }
 </script>
 
 <style>
 .navbar {
-  background-image: linear-gradient(to bottom, darkblue, blue);
+  background-image: linear-gradient(to bottom, #152939, #55677d);
 }
 
 .navbar-nav .nav-link.active{

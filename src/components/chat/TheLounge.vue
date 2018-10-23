@@ -1,23 +1,21 @@
 <template>
   <b-embed
     type="iframe"
-    :src="chatUrl">
+    :src="baseUrl + '?nick=' + username">
   </b-embed>
 </template>
 
 <script>
-const baseUrl = 'https://webchat.alternativehaven.com/'
-
 export default {
   name: 'TheLounge',
+  data () {
+    return {
+      baseUrl: process.env.VUE_APP_THELOUNGE_URL
+    }
+  },
   props: {
     username: String
   },
-  computed: {
-    chatUrl: function() {
-      return baseUrl + '?nick=' + this.username
-    }
-  }
 }
 </script>
 
