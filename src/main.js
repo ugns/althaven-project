@@ -21,7 +21,8 @@ import {
   faSignOutAlt,
   faUsers,
   faUserEdit,
-  faUserFriends
+  faUserFriends,
+  faSpinner
 } from '@fortawesome/free-solid-svg-icons'
 
 import App from '@/App.vue'
@@ -42,7 +43,7 @@ Vue.component(FontAwesomeLayersText.name, FontAwesomeLayersText)
 Vue.config.productionTip = false
 
 library.add(faUserCircle, faEdit, faComments, faEnvelope) // Add far icons
-library.add(faSignInAlt, faSignOutAlt, faUsers, faUserEdit, faUserFriends) // add fas icons
+library.add(faSignInAlt, faSignOutAlt, faUsers, faUserEdit, faUserFriends, faSpinner) // add fas icons
 
 new Vue({
   router,
