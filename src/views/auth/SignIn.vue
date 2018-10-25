@@ -37,8 +37,8 @@
     <b-row class="justify-content-md-center">
       <b-col>
         <p>
-          <b-link :to="{ name: 'signUp' }">Create an account</b-link> or 
-          <b-link :to="{ name: 'passwordReset' }">Reset password</b-link>
+          <b-link replace :to="{ name: 'signUp' }">Create an account</b-link> or 
+          <b-link replace :to="{ name: 'passwordReset' }">Reset password</b-link>
         </p>
       </b-col>
     </b-row>
@@ -65,7 +65,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters("auth", ["hasAuthenticationStatus"])
+    ...mapGetters("auth", ["hasAuthenticationStatus"]),
   },
   methods: {
     async signIn() {
@@ -75,7 +75,8 @@ export default {
       })
 
       if (!this.hasAuthenticationStatus) {
-        this.$router.push({ name: 'home' })
+        // this.$router.push({ name: 'home' })
+        this.$router.go(-1)
       }
     }
   }

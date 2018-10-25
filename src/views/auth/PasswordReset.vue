@@ -27,8 +27,8 @@
     <b-row class="justify-content-md-center">
       <b-col>
         <p>
-          <b-link :to="{ name: 'signIn' }">Sign into account</b-link> or 
-          <b-link :to="{ name: 'signUp' }">Create an account</b-link>
+          <b-link replace :to="{ name: 'signIn' }">Sign into account</b-link> or 
+          <b-link replace :to="{ name: 'signUp' }">Create an account</b-link>
         </p>
       </b-col>
     </b-row>
