@@ -103,7 +103,7 @@ export default {
       })
 
       if (!this.hasAuthenticationStatus) {
-        router.push({ name: 'confirmSignup' })
+        router.push({ name: 'confirmSignUp' })
       }
     }
   }
