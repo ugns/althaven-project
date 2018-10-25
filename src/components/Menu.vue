@@ -6,7 +6,7 @@
     <b-navbar-brand :to="{ name: 'home' }">{{ sitebranch }}</b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
-        <b-nav-item :to="{ name: 'about' }">About</b-nav-item>
+        <!-- <b-nav-item :to="{ name: 'about' }">About</b-nav-item> -->
         <b-nav-item
           v-if="isAuthenticated" 
           :to="{ name: 'webchat' }">Chatrooms</b-nav-item>
