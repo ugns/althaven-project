@@ -1,5 +1,5 @@
 <template>
-  <div class="thelounge">
+  <div class="mx-auto w-75 py-2">
     <div>
       <b-embed
         type="iframe"
@@ -26,13 +26,4 @@ export default {
 </script>
 
 <style scoped>
-.thelounge {
-  padding: 1.5rem;
-  margin: 0;
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-  position: relative;
-  border-width: .2rem;
-  width: 75%
-}
 </style>

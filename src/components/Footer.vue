@@ -1,8 +1,8 @@
 <template>
-  <footer class="bd-footer">
+  <footer class="mt-3 bd-footer">
     <b-container>
-      <b-row class="justify-content-md-center">
-        <div class="bd-footer-copyright">&copy;&nbsp;{{ copyright }} UnderGrid Network Services</div>
+      <b-row>
+        <div class="mx-auto mw-100 py-3">&copy;&nbsp;{{ copyright }} UnderGrid Network Services</div>
       </b-row>
     </b-container>
   </footer>
@@ -22,12 +22,6 @@ export default {
 
 <style>
 .bd-footer {
-  margin-top: 2em;
   border-top: .2rem #f7f7f7 solid !important;
-}
-
-.bd-footer-copyright {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 </style>
