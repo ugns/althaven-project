@@ -52,7 +52,6 @@
 
 <script>
 import Vue from "vue";
-import router from "@/router";
 import { mapGetters } from "vuex";
 import Alert from "@/components/auth/Alert.vue";
 
@@ -76,7 +75,7 @@ export default {
       })
 
       if (!this.hasAuthenticationStatus) {
-        router.go(-1)
+        this.$router.push({ name: 'home' })
       }
     }
   }

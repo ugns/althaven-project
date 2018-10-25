@@ -57,7 +57,6 @@
 
 <script>
 import Vue from "vue"
-import router from "@/router"
 import { mapGetters } from "vuex"
 import Alert from "@/components/auth/Alert.vue"
 
@@ -82,7 +81,7 @@ export default {
         password: this.password,
       })
       if (!this.hasAuthenticationStatus) {
-        router.push({ name: 'signIn' })
+        this.$router.push({ name: 'signIn' })
       }
     },
     async passwordResetResend() {
