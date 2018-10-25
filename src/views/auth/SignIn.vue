@@ -75,7 +75,6 @@ export default {
       })
 
       if (!this.hasAuthenticationStatus) {
-        // this.$router.push({ name: 'home' })
         this.$router.go(-1)
       }
     }
