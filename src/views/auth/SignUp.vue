@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <div class="b-form-1">
           <h2>Sign Up</h2>
           <p>Sign up for an account on the site.</p>
@@ -10,6 +10,7 @@
               <b-form-input 
                 id="usernameInput"
                 type="text"
+                autocomplete="username"
                 v-model="username"
                 required
                 autofocus
@@ -20,7 +21,7 @@
               <b-form-input
                 id="emailInput"
                 type="email"
-                autocomplete="username"
+                autocomplete="email"
                 v-model="email"
                 required
                 placeholder="jdoe@example.com"/>
@@ -52,7 +53,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <p>
           <b-link :to="{ name: 'signIn' }">Sign into account</b-link> or 
           <b-link :to="{ name: 'passwordReset' }">Reset password</b-link>
@@ -60,7 +61,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <v-alert/>
       </b-col>
     </b-row>

@@ -1,6 +1,6 @@
 <template>
   <b-row class="justify-content-md-center">
-    <b-col cols="8">
+    <b-col>
       <h2>Sign Out...</h2>
     </b-col>
   </b-row>

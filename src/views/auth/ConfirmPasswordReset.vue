@@ -1,15 +1,16 @@
 <template>
   <b-container>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <div class="b-form-1">
           <h2>Confirm Password Reset</h2>
+          <p>Please check your email for the password reset code to continue.</p>
           <b-form @submit.prevent="confirmPasswordReset">
             <b-input-group prepend="Email">
               <b-form-input 
                 id="emailInput"
-                type="text"
-                autocomplete="username"
+                type="email"
+                autocomplete="email"
                 v-model="email"
                 required
                 autofocus
@@ -48,7 +49,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <v-alert/>
       </b-col>
     </b-row>

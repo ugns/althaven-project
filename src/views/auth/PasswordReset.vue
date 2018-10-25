@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <div class="b-form-1">
           <h2>Reset Password</h2>
           <p>Request a password reset code via email.</p>
@@ -10,6 +10,7 @@
               <b-form-input
                 id="emailInput"
                 type="email"
+                autocomplete="email"
                 v-model="email"
                 required
                 autofocus
@@ -24,7 +25,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <p>
           <b-link :to="{ name: 'signIn' }">Sign into account</b-link> or 
           <b-link :to="{ name: 'signUp' }">Create an account</b-link>
@@ -32,7 +33,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
-      <b-col cols="4">
+      <b-col>
         <v-alert/>
       </b-col>
     </b-row>

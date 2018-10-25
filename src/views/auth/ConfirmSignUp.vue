@@ -1,14 +1,15 @@
 <template>
   <b-container>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <div class="b-form-1">
           <h2>Confirm Sign Up</h2>
+          <p>Please check your email for the account verification code to continue.</p>
           <b-input-group prepend="Email">
             <b-form-input 
               id="emailInput"
               type="text"
-              autocomplete="username"
+              autocomplete="email"
               v-model="email"
               required
               autofocus
@@ -37,7 +38,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-md-center">
-      <b-col cols="6">
+      <b-col>
         <v-alert/>
       </b-col>
     </b-row>

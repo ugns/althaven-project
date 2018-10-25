@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
+import vuelidate from 'vuelidate'
+
 import {
   FontAwesomeIcon,
   FontAwesomeLayers,
@@ -10,11 +12,16 @@ import {
 } from '@fortawesome/fontawesome-svg-core'
 import {
   faUserCircle,
-  faEdit
+  faEdit,
+  faComments,
+  faEnvelope
 } from '@fortawesome/free-regular-svg-icons'
 import {
   faSignInAlt,
-  faSignOutAlt
+  faSignOutAlt,
+  faUsers,
+  faUserEdit,
+  faUserFriends
 } from '@fortawesome/free-solid-svg-icons'
 
 import App from '@/App.vue'
@@ -26,15 +33,16 @@ import AuthConfig from '@/aws-exports'
 Auth.configure(AuthConfig)
 
 Vue.use(BootstrapVue)
+Vue.use(vuelidate)
 
-Vue.component('fa-icon', FontAwesomeIcon)
-Vue.component('fa-layers', FontAwesomeLayers)
-Vue.component('fa-layers-text', FontAwesomeLayersText)
+Vue.component(FontAwesomeIcon.name, FontAwesomeIcon)
+Vue.component(FontAwesomeLayers.name, FontAwesomeLayers)
+Vue.component(FontAwesomeLayersText.name, FontAwesomeLayersText)
 
 Vue.config.productionTip = false
 
-library.add(faUserCircle, faEdit)
-library.add(faSignInAlt, faSignOutAlt)
+library.add(faUserCircle, faEdit, faComments, faEnvelope) // Add far icons
+library.add(faSignInAlt, faSignOutAlt, faUsers, faUserEdit, faUserFriends) // add fas icons
 
 new Vue({
   router,
