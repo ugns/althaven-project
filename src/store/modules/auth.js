@@ -89,9 +89,7 @@ export default {
       }
     },
     confirmSignUp: async ({commit}, params) => {
-      commit('clearAuthenticationStatus', null, {
-        root: true
-      })
+      commit('clearAuthenticationStatus', null)
       try {
         await Auth.confirmSignUp(params.username, params.code)
       } catch (err) {
