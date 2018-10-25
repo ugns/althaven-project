@@ -1,6 +1,5 @@
 <template>
   <TheLounge
-    v-if="isAuthenticated"
     :username="user.nickname">
   </TheLounge>
 </template>
