@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto w-100 py-2">
+  <div class="mx-auto w-75 py-2">
     <div>
       <b-embed
         type="iframe"
