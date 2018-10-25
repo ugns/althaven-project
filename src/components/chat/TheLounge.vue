@@ -1,8 +1,14 @@
 <template>
-  <b-embed
-    type="iframe"
-    :src="baseUrl + '?nick=' + username">
-  </b-embed>
+  <div class="thelounge">
+    <div>
+      <b-embed
+        type="iframe"
+        aspect="16by9"
+        allowfullscreen
+        :src="baseUrl + '?nick=' + username">
+      </b-embed>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -20,10 +26,13 @@ export default {
 </script>
 
 <style scoped>
-.embed-responsive {
-  height: 600px;
-}
-.embed-responsive-item {
-  height: 600px;
+.thelounge {
+  padding: 1.5rem;
+  margin: 0;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  position: relative;
+  border-width: .2rem;
+  width: 75%
 }
 </style>
