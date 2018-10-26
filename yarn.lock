@@ -953,7 +953,7 @@
     webpack-merge "^4.1.3"
     yorkie "^2.0.0"
 
-"@vue/cli-shared-utils@^3.0.5":
+"@vue/cli-shared-utils@^3.0.0-rc.3", "@vue/cli-shared-utils@^3.0.5":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-3.0.5.tgz#6fd4772c0eca9f529c4b941b3b721a3aae1d7b8e"
   integrity sha512-z5vPzUQGZJnRkojqVbDYar8NvGSvB0kUcO0O+Y+xkxVbjZxrq78e9bJFB4PR4QsqQbuBS9v3zawLWY4MhKwKOA==
@@ -1512,6 +1512,21 @@ aws-sdk@2.329.0:
   version "2.329.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.329.0.tgz#616da7ca5e1909e53333148694990e068272150f"
   integrity sha512-5yti9jyL6QL8CP5LGKX3uyrQcLAvLk6kyMZ749+F68IsutFKi0DaYxjxqx7lqWfzCSH3Z5REJ+XeywJLQ2tqfQ==
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.1.0"
+    xml2js "0.4.19"
+
+aws-sdk@^2.225.1:
+  version "2.343.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.343.0.tgz#4277b6f5a2fe359f38978c1d8170947138af45d9"
+  integrity sha512-WB7uwmlyQ2NHEmXufYgJa6Qr1uwAFqBJ5GBgO8YALYAck9C6TLGD9/oKJGK93PXBpmgPdJqVIfxZE80YQ5/xXQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -3060,6 +3075,11 @@ es-to-primitive@^1.1.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+es6-promise-pool@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/es6-promise-pool/-/es6-promise-pool-2.5.0.tgz#147c612b36b47f105027f9d2bf54a598a99d9ccb"
+  integrity sha1-FHxhKza0fxBQJ/nSv1SlmKmdnMs=
 
 escape-html@~1.0.3:
   version "1.0.3"
@@ -5136,7 +5156,7 @@ miller-rabin@^4.0.0:
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.37.0.tgz#0b6a0ce6fdbe9576e25f1f2d2fde8830dc0ad0d8"
   integrity sha512-R3C4db6bgQhlIhPU48fUtdVmKnflq+hRdad7IyKhtFj06VPNVdk2RhiYL3UjQIlso8L+YxAtFkobT0VK+S/ybg==
 
-mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.18, mime-types@~2.1.19:
+mime-types@^2.1.12, mime-types@^2.1.18, mime-types@~2.1.17, mime-types@~2.1.18, mime-types@~2.1.19:
   version "2.1.21"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.21.tgz#28995aa1ecb770742fe6ae7e58f9181c744b3f96"
   integrity sha512-3iL6DbwpyLzjR3xHSFNFeb9Nz/M8WDkX33t1GFQnFOllWk8pOrh/LSrB5OXlnlW5P9LH73X6loW/eogc+F5lJg==
@@ -7867,6 +7887,17 @@ vue-awesome@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-3.1.3.tgz#538badc9538d0cd8bb2e17b2cd6675e970dc3816"
   integrity sha512-JJXcU1l4Lo/kahhEvUSpKEgbL47pAUfXeAdj/ayVL6HClGbCCOhCHsup1PprTFlCjgZ8N42jDnYBRsBP5QxGGA==
+
+vue-cli-plugin-s3-deploy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-s3-deploy/-/vue-cli-plugin-s3-deploy-3.0.0.tgz#4f60a9d9902da40240f05da0f52d3cce87437d85"
+  integrity sha512-6u+pOq9jBa0DITdLDHUydxIxvjPEr+03ei9B5iizCWZqts58jk6NHdIsn8crWKvvO2nKFZ8pbdtxhoWWXeikoA==
+  dependencies:
+    "@vue/cli-shared-utils" "^3.0.0-rc.3"
+    aws-sdk "^2.225.1"
+    es6-promise-pool "^2.5.0"
+    globby "^8.0.1"
+    mime-types "^2.1.18"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
