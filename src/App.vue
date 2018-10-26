@@ -12,11 +12,13 @@
 
 <script>
 import Vue from "vue";
-import Menu from "@/components/Menu";
-import Footer from "@/components/Footer";
 
-Vue.component("v-menu", Menu);
-Vue.component("v-footer", Footer);
+Vue.component("v-menu", function (resolve) {
+  require(['@/components/Menu.vue'], resolve)
+});
+Vue.component("v-footer", function (resolve) {
+  require(['@/components/Footer.vue'], resolve)
+});
 
 export default {
   name: "App"
@@ -31,7 +33,6 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
   margin: 0;
   padding: 0;
 }

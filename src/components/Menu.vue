@@ -41,7 +41,7 @@
 import { mapGetters, mapState, mapActions } from 'vuex';
 
 export default {
-  name: 'Navbar',
+  name: 'Menu',
   data () {
     return {
       sitebranch: process.env.VUE_APP_SITE_BRAND

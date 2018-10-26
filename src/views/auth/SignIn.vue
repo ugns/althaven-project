@@ -53,9 +53,10 @@
 <script>
 import Vue from "vue";
 import { mapGetters } from "vuex";
-import Alert from "@/components/auth/Alert.vue";
 
-Vue.component("v-alert", Alert);
+Vue.component("v-alert", function (resolve) {
+  require(['@/components/auth/Alert.vue'], resolve)
+});
 
 export default {
   data() {

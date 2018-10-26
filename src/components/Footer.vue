@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'Footer',
   computed: {
     copyright: function() {
       const initialYear = '2018'
