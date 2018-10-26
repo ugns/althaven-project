@@ -1,9 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home.vue'
 import store from '@/store'
 
 Vue.use(Router)
+
+const Home = resolve => require(['@/views/Home.vue'], resolve)
+const About = resolve => require(['@/views/Home.vue'], resolve)
+const Webchat = resolve => require(['@/views/Webchat.vue'], resolve)
+const SignIn = resolve => require(['@/views/auth/SignIn.vue'], resolve)
+const SignOut = resolve => require(['@/views/auth/SignOut.vue'], resolve)
+const SignUp = resolve => require(['@/views/auth/SignUp.vue'], resolve)
+const ConfirmSignUp = resolve => require(['@/views/auth/ConfirmSignUp.vue'], resolve)
+const PasswordReset = resolve => require(['@/views/auth/PasswordReset.vue'], resolve)
+const ConfirmPasswordReset = resolve => require(['@/views/auth/ConfirmPasswordReset.vue'], resolve)
 
 const routes = [{
     path: '/',
@@ -11,30 +20,28 @@ const routes = [{
     component: Home,
     meta: {
       title: process.env.VUE_APP_SITE_NAME,
-      auth: false
     }
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    component: About,
+    meta: {
+      title: 'About'
+    }
   },
   {
     path: '/signIn',
     name: 'signIn',
-    component: () => import( /* webpackChunkName: "auth" */ '@/views/auth/SignIn.vue'),
+    component: SignIn,
     meta: {
       title: 'Sign In',
-      auth: false
     }
   },
   {
     path: '/signOut',
     name: 'signOut',
-    component: () => import( /* webpackChunkName: "auth" */ '@/views/auth/SignOut.vue'),
+    component: SignOut,
     meta: {
       title: 'Sign Out',
       auth: true
@@ -43,25 +50,23 @@ const routes = [{
   {
     path: '/signUp',
     name: 'signUp',
-    component: () => import( /* webpackChunkName: "auth" */ '@/views/auth/SignUp.vue'),
+    component: SignUp,
     meta: {
       title: 'Create Account',
-      auth: false
     }
   },
   {
     path: '/confirmSignUp',
     name: 'confirmSignUp',
-    component: () => import( /* webpackChunkName: "auth" */ '@/views/auth/ConfirmSignUp.vue'),
+    component: ConfirmSignUp,
     meta: {
       title: 'Confirm Account',
-      auth: false
     }
   },
   {
     path: '/changePassword',
     name: 'changePassword',
-    component: () => import( /* webpackChunkName: "about" */ '@/views/About.vue'),
+    component: About,
     meta: {
       title: 'Change Password',
       auth: true
@@ -70,25 +75,23 @@ const routes = [{
   {
     path: '/passwordReset',
     name: 'passwordReset',
-    component: () => import( /* webpackChunkName: "auth" */ '@/views/auth/PasswordReset.vue'),
+    component: PasswordReset,
     meta: {
       title: 'Password Reset',
-      auth: false
     }
   },
   {
     path: '/confirmPasswordReset',
     name: 'confirmPasswordReset',
-    component: () => import( /* webpackChunkName: "auth" */ '@/views/auth/ConfirmPasswordReset.vue'),
+    component: ConfirmPasswordReset,
     meta: {
       title: 'Confirm Password Reset',
-      auth: false
     }
   },
   {
     path: '/chat',
     name: 'webchat',
-    component: () => import( /* webpackChunkName: "chat" */ '@/views/Webchat.vue'),
+    component: Webchat,
     meta: {
       title: 'Chatrooms',
       auth: true
