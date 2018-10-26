@@ -26,7 +26,6 @@ export default {
 <style>
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap-vue/dist/bootstrap-vue.css";
-@import "~pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css";
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
