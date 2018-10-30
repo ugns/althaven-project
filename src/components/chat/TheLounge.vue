@@ -16,14 +16,14 @@ export default {
   name: 'TheLounge',
   data () {
     return {
-      baseUrl: process.env.VUE_APP_THELOUNGE_URL
+      baseUrl: process.env.VUE_APP_THELOUNGE_URL || "https://demo.thelounge.chat"
     }
   },
   props: {
-    username: String
+    username: {
+      type: String,
+      required: true
+    }
   },
 }
 </script>
-
-<style scoped>
-</style>
